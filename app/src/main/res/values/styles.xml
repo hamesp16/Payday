@@ -1,11 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionMenuTextColor">#FFFFFF</item>
+        <item name="android:actionMenuTextColor">#FFFFFF</item>
+        <item name="android:textColorPrimary">@android:color/background_light</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_clear_white_24dp</item>
+        <item name="android:actionBarStyle">@style/ThemeOverlay.AppCompat.Dark</item>
     </style>
+
+    <style name="ActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">#ffffff</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_clear_white_24dp</item>
+
+    </style>
+
+
 
 </resources>

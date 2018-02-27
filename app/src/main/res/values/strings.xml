@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Payday</string>
+    <string name="workday_quick_shift_label">Quick shift</string>
+    <string name="workday_shift_start_label">Shift start</string>
+    <string name="workday_date_set_text">Set date</string>
+    <string name="workday_spinner_text">---</string>
+    <string name="workday_shift_end_label">Shift end</string>
+    <string name="workday_break_unpaid_label">Break (unpaid)</string>
+    <string name="workday_hours_paid_label">Hours paid</string>
+    <string name="workday_notes_label">Notes</string>
+    <string name="workday_notes_hint">(optional)</string>
 </resources>

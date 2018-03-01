@@ -3,13 +3,16 @@ package hammertime.com.payday.fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -21,6 +24,7 @@ public class WorkdayListFragment extends Fragment
 {
     private RecyclerView workdayRecyclerView;
     private WorkdayAdapter adapter;
+    private FloatingActionButton addWorkdayFab;
 
     @Nullable
     @Override
@@ -33,10 +37,26 @@ public class WorkdayListFragment extends Fragment
         workdayRecyclerView = view.findViewById(R.id.workday_recycler_view);
         workdayRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        addWorkdayFab = view.findViewById(R.id.workday_list_fab);
+        addWorkdayFab.setOnClickListener(new View.OnClickListener()
+             {
+                 @Override
+                 public void onClick(View v)
+                 {
+                     Fragment newCase = new WorkdayFragment();
+                     FragmentTransaction transaction=getFragmentManager().beginTransaction();
+                     transaction.replace(R.id.fragment_container,newCase);
+                     transaction.addToBackStack(null);
+                     transaction.commit();
+                 }
+             }
+        );
+
         updateUI();
 
         return view;
     }
+
 
     private void updateUI()
     {
@@ -50,8 +70,6 @@ public class WorkdayListFragment extends Fragment
 
     private class WorkdayHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
-        private TextView idTextView;
-        private TextView dateTextView;
         private Workday workday;
 
         public WorkdayHolder(LayoutInflater inflater, ViewGroup parent)

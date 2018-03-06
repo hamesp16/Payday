@@ -11,14 +11,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
 import hammertime.com.payday.R;
-import hammertime.com.payday.WorkdayLab;
-import hammertime.com.payday.entity.Workday;
+import hammertime.com.payday.data.Workday;
 
 public class WorkdayListFragment extends Fragment
 {
@@ -52,21 +49,9 @@ public class WorkdayListFragment extends Fragment
              }
         );
 
-        updateUI();
-
         return view;
     }
 
-
-    private void updateUI()
-    {
-        WorkdayLab workdayLab = WorkdayLab.get(getActivity());
-        List<Workday> workdayList = workdayLab.getWorkdayList();
-
-        adapter = new WorkdayAdapter(workdayList);
-        workdayRecyclerView.setAdapter(adapter);
-
-    }
 
     private class WorkdayHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
@@ -99,8 +84,9 @@ public class WorkdayListFragment extends Fragment
         }
 
 
+        @NonNull
         @Override
-        public WorkdayHolder onCreateViewHolder(ViewGroup parent, int viewType)
+        public WorkdayHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
         {
             LayoutInflater inflater = LayoutInflater.from(getActivity());
 
@@ -108,7 +94,7 @@ public class WorkdayListFragment extends Fragment
         }
 
         @Override
-        public void onBindViewHolder(WorkdayHolder holder, int position)
+        public void onBindViewHolder(@NonNull WorkdayHolder holder, int position)
         {
             Workday workday = workdayList.get(position);
             holder.bind(workday);

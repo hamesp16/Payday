@@ -6,9 +6,9 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-<!-- -
-Work in progress
-<!- -->
+    <!-- -
+    Work in progress
+    <!- -->
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"

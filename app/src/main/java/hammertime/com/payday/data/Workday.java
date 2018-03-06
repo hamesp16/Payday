@@ -1,11 +1,22 @@
-package hammertime.com.payday.entity;
+package hammertime.com.payday.data;
+
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.TypeConverters;
+import android.support.annotation.NonNull;
 
 import java.util.Date;
-import java.util.UUID;
 
+import hammertime.com.payday.util.DateConverter;
+
+@Entity
+@TypeConverters(DateConverter.class)
 public class Workday
 {
-    private UUID id;
+    @PrimaryKey
+    @NonNull
+    private String workdayId;
+
     private Date shiftStart;
     private Date shiftEnd;
     private double hoursWorked;
@@ -13,14 +24,15 @@ public class Workday
     private long overtimeHours;
     private String notes;
 
-    public Workday()
+    @NonNull
+    public String getWorkdayId()
     {
-        this.id = UUID.randomUUID();
+        return workdayId;
     }
 
-    public UUID getId()
+    public void setWorkdayId(@NonNull String workdayId)
     {
-        return id;
+        this.workdayId = workdayId;
     }
 
     public Date getShiftStart()

@@ -13,14 +13,19 @@ import java.util.List;
 public interface WorkdayDao
 {
     @Query("SELECT * FROM Workday")
-    LiveData<List<Workday>> loadAllWorkdays();
+    LiveData<List<Workday>> getAllWorkdays();
 
     @Query("SELECT * FROM Workday WHERE workdayId = :workdayId ")
     LiveData<Workday> getWorkdayById(String workdayId);
+
+    @Query("DELETE FROM Workday")
+    void deleteAll();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertWorkday(Workday workday);
 
     @Delete
     void deleteWorkday(Workday workday);
+
+    //TODO: make a query for ordering by last added date
 }

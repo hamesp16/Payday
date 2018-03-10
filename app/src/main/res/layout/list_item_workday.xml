@@ -15,7 +15,7 @@
         android:layout_height="wrap_content">
 
         <RelativeLayout
-            android:id="@+id/relativeLayout"
+            android:id="@+id/item_day_date_relativelayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -39,6 +39,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
+                android:id="@+id/item_date_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/item_day_text_view"
@@ -48,39 +49,39 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/item_time_worked_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="12.00-20.00"
-            app:layout_constraintStart_toEndOf="@+id/relativeLayout"
+            app:layout_constraintStart_toEndOf="@+id/item_day_date_relativelayout"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/item_salary_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="1600 kr"
-            app:layout_constraintBottom_toTopOf="@+id/textView3"
-            app:layout_constraintStart_toEndOf="@+id/relativeLayout"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintBottom_toTopOf="@+id/item_note_text_view"
+            app:layout_constraintStart_toEndOf="@+id/item_day_date_relativelayout"
+            app:layout_constraintTop_toBottomOf="@+id/item_time_worked_text_view" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/item_note_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="8dp"
             android:text="En liten beskrivelse"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/relativeLayout" />
+            app:layout_constraintStart_toEndOf="@+id/item_day_date_relativelayout" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/item_hours_worked_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -90,14 +91,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/item_unpaid_break_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
             android:text="30 min"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/item_hours_worked_text_view" />
 
     </android.support.constraint.ConstraintLayout>
 

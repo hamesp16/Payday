@@ -13,24 +13,25 @@ import hammertime.com.payday.util.DateConverter;
 @TypeConverters(DateConverter.class)
 public class Workday
 {
-    @PrimaryKey
+    @PrimaryKey (autoGenerate = true)
     @NonNull
-    private String workdayId;
+    private int workdayId;
 
     private Date shiftStart;
     private Date shiftEnd;
     private double hoursWorked;
     private long unpaidBreak;
     private long overtimeHours;
-    private String notes;
+    private double salary;
+    private String note;
 
     @NonNull
-    public String getWorkdayId()
+    public int getWorkdayId()
     {
         return workdayId;
     }
 
-    public void setWorkdayId(@NonNull String workdayId)
+    public void setWorkdayId(@NonNull int workdayId)
     {
         this.workdayId = workdayId;
     }
@@ -85,13 +86,23 @@ public class Workday
         this.overtimeHours = overtimeHours;
     }
 
-    public String getNotes()
+    public double getSalary()
     {
-        return notes;
+        return salary;
     }
 
-    public void setNotes(String notes)
+    public void setSalary(double salary)
     {
-        this.notes = notes;
+        this.salary = salary;
+    }
+
+    public String getNote()
+    {
+        return note;
+    }
+
+    public void setNote(String note)
+    {
+        this.note = note;
     }
 }

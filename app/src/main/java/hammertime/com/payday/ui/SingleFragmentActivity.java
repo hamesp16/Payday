@@ -1,4 +1,4 @@
-package hammertime.com.payday.activity;
+package hammertime.com.payday.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

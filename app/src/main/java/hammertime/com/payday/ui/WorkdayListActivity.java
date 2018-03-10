@@ -1,6 +1,5 @@
-package hammertime.com.payday.activity;
+package hammertime.com.payday.ui;
 
-import hammertime.com.payday.fragment.WorkdayListFragment;
 import android.support.v4.app.Fragment;
 
 public class WorkdayListActivity extends SingleFragmentActivity

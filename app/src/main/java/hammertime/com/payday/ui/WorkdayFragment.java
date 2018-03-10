@@ -1,4 +1,4 @@
-package hammertime.com.payday.fragment;
+package hammertime.com.payday.ui;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_sort"
+        android:icon="@drawable/ic_sort_white_24dp"
+        android:title="@string/menu_action_sort"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_about_us"
+        android:icon="@drawable/ic_info_white_24dp"
+        android:title="@string/menu_action_settings"
+        app:showAsAction="never"/>
+
+</menu>

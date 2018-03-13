@@ -17,6 +17,7 @@ public class Workday
     @NonNull
     private int workdayId;
 
+    //TODO: Date does not support timezone etc, change to better alternative
     private Date shiftStart;
     private Date shiftEnd;
     private double hoursWorked;

@@ -64,7 +64,7 @@ public abstract class WorkdayDatabase extends RoomDatabase
         {
             dao.deleteAll();
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 50; i++)
             {
                 Workday workday = new Workday();
                 workday.setShiftStart(new Date());
@@ -72,7 +72,7 @@ public abstract class WorkdayDatabase extends RoomDatabase
                 workday.setHoursWorked(7.5);
                 workday.setOvertimeHours(0);
                 workday.setUnpaidBreak(30);
-                workday.setNote("Dette er et notat");
+                workday.setNote("Dette er testdata..");
                 dao.insertWorkday(workday);
             }
 

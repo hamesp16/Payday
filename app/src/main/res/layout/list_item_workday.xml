@@ -9,7 +9,7 @@
     <!-- -
     Work in progress
     <!- -->
-
+    <!-- TODO: Fix layout -->
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -23,7 +23,7 @@
             android:layout_marginTop="8dp"
             android:background="@android:color/holo_orange_dark"
             android:orientation="vertical"
-            android:padding="4dp"
+            android:padding="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -36,7 +36,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerInParent="true"
                 android:text="ONS."
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/item_date_text_view"
@@ -44,7 +46,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/item_day_text_view"
                 android:text="22.02.2018"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
@@ -54,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="12.00-20.00"
+            android:text="12.00 - 20.00"
             app:layout_constraintStart_toEndOf="@+id/item_day_date_relativelayout"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -76,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="8dp"
-            android:text="En liten beskrivelse"
+            android:text="A small description"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/item_day_date_relativelayout" />
 
@@ -87,6 +91,9 @@
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
             android:text="7:5h"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -105,8 +112,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@color/colorPrimaryDark" />
+        android:background="@android:color/darker_gray" />
 
 </LinearLayout>

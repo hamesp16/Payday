@@ -18,25 +18,25 @@ public class WorkdayListAdapter extends RecyclerView.Adapter<WorkdayListAdapter.
 {
     public class WorkdayHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
-        private TextView day;
-        private TextView date;
-        private TextView timeWorked;
-        private TextView salary;
-        private TextView note;
-        private TextView hoursWorked;
-        private TextView unpaidBreak;
+        private TextView dayTextView;
+        private TextView dateTextView;
+        private TextView timeWorkedTextView;
+        private TextView salaryTextView;
+        private TextView noteTextView;
+        private TextView hoursWorkedTextView;
+        private TextView unpaidBreakTextView;
 
         WorkdayHolder(View itemView)
         {
             super(itemView);
             itemView.setOnClickListener(this);
-            day = itemView.findViewById(R.id.item_day_text_view);
-            date = itemView.findViewById(R.id.item_date_text_view);
-            timeWorked = itemView.findViewById(R.id.item_time_worked_text_view);
-            salary = itemView.findViewById(R.id.item_salary_text_view);
-            note = itemView.findViewById(R.id.item_note_text_view);
-            hoursWorked = itemView.findViewById(R.id.item_hours_worked_text_view);
-            unpaidBreak = itemView.findViewById(R.id.item_unpaid_break_text_view);
+            dayTextView = itemView.findViewById(R.id.item_day_text_view);
+            dateTextView = itemView.findViewById(R.id.item_date_text_view);
+            timeWorkedTextView = itemView.findViewById(R.id.item_time_worked_text_view);
+            salaryTextView = itemView.findViewById(R.id.item_salary_text_view);
+            noteTextView = itemView.findViewById(R.id.item_note_text_view);
+            hoursWorkedTextView = itemView.findViewById(R.id.item_hours_worked_text_view);
+            unpaidBreakTextView = itemView.findViewById(R.id.item_unpaid_break_text_view);
         }
 
         //TODO: when workday is clicked go to edit page
@@ -52,7 +52,6 @@ public class WorkdayListAdapter extends RecyclerView.Adapter<WorkdayListAdapter.
 
     private final LayoutInflater inflater;
     private List<Workday> workdayList;
-    private Workday currentWorkday;
 
     WorkdayListAdapter(Context context)
     {
@@ -70,15 +69,15 @@ public class WorkdayListAdapter extends RecyclerView.Adapter<WorkdayListAdapter.
     @Override
     public void onBindViewHolder(@NonNull WorkdayHolder holder, int position)
     {
-        currentWorkday = workdayList.get(position);
+        Workday currentWorkday = workdayList.get(position);
 
-        holder.day.setText("ONS");
-        holder.date.setText("01.03.2018");
-        holder.timeWorked.setText(String.valueOf(currentWorkday.getHoursWorked()));
-        holder.salary.setText("1600,-");
-        holder.note.setText(currentWorkday.getNote());
-        holder.hoursWorked.setText(String.valueOf(currentWorkday.getHoursWorked()));
-        holder.unpaidBreak.setText(String.valueOf(currentWorkday.getUnpaidBreak()));
+        holder.dayTextView.setText("ONS");
+        holder.dateTextView.setText("01.03.2018");
+        holder.timeWorkedTextView.setText(String.valueOf("12 - 20"));
+        holder.salaryTextView.setText("1600,-");
+        holder.noteTextView.setText(currentWorkday.getNote());
+        holder.hoursWorkedTextView.setText(String.valueOf(currentWorkday.getHoursWorked()));
+        holder.unpaidBreakTextView.setText(String.valueOf(currentWorkday.getUnpaidBreak()) + " min");
     }
 
     void setWorkdayList(List<Workday> workdays)

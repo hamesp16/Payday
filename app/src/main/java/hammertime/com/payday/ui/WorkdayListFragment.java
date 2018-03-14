@@ -9,9 +9,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
 import hammertime.com.payday.R;
 import hammertime.com.payday.viewmodel.WorkdayViewModel;
 
@@ -25,6 +28,9 @@ public class WorkdayListFragment extends Fragment
                              @Nullable Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_workday_list, container, false);
+
+        toolbar(view);
+
 
         RecyclerView recyclerView = view.findViewById(R.id.workday_recycler_view);
         final WorkdayListAdapter adapter = new WorkdayListAdapter(getContext());
@@ -55,5 +61,34 @@ public class WorkdayListFragment extends Fragment
         );
 
         return view;
+    }
+
+    private void toolbar(View view)
+    {
+        Toolbar toolbar = view.findViewById(R.id.workday_list_toolbar);
+
+        toolbar.setOnMenuItemClickListener(item ->
+        {
+            int id = item.getItemId();
+
+            if (id == R.id.action_sort)
+            {
+                Toast.makeText(view.getContext(),
+                        "Sort clicked!",
+                        Toast.LENGTH_SHORT)
+                        .show();
+            }
+            else if (id == R.id.action_about_us)
+            {
+                Toast.makeText(view.getContext(),
+                        "Settings clicked!",
+                        Toast.LENGTH_SHORT)
+                        .show();
+            }
+
+            return WorkdayListFragment.super.onOptionsItemSelected(item);
+        });
+        toolbar.setTitle(R.string.app_name);
+        toolbar.inflateMenu(R.menu.main_menu);
     }
 }

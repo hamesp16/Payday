@@ -4,14 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.NavUtils;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -23,8 +17,6 @@ public class WorkdayFragment extends Fragment
 {
     private EditText noteEditText;
     private Toolbar toolbar;
-
-
 
     @Nullable
     @Override
@@ -59,6 +51,17 @@ public class WorkdayFragment extends Fragment
             return WorkdayFragment.super.onOptionsItemSelected(item);
         });
         toolbar.setNavigationIcon(R.drawable.ic_clear_white_24dp);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Toast.makeText(view.getContext(),
+                        "Back icon clicked!",
+                        Toast.LENGTH_SHORT)
+                        .show();
+            }
+        });
         toolbar.setTitle("Register workday");
         toolbar.inflateMenu(R.menu.register_workday_menu);
     }
